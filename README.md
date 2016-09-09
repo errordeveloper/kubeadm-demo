@@ -55,3 +55,5 @@ To get an idea of how the app works, you can install Weave Scope probe and conne
 ```console
 (master) # kubectl apply -f https://cloud.weave.works/launch/k8s/weavescope.json?token=<WeaveCloudToken>
 ```
+
+> TODO: External LoadBalancer and NodePort
