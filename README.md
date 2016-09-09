@@ -39,6 +39,10 @@ If you want, you can use a simple script provided in this repo to get get yourse
 > ./create-cluster.sh
 ```
 
+Next, login to master and nodes with `gcloud compute ssh`.
+
+> You might need to wait for a while for Docker packages to install (check `journalctl | grep startup-script`).
+
 ## Demo App
 
 If you don't have an app to install, try our microservices referece app
