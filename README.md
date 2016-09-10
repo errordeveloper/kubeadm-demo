@@ -54,7 +54,7 @@ Warning: Permanently added 'compute.1236589767647167447' (ECDSA) to the list of 
 ```
 
 Now run the commands shown above and this what you should see:
-```
+```console
 [root@kube-master-1-0 ~]# docker run -v /usr/local:/target gcr.io/kubeadm/installer:preview
 Installing binaries for Kubernetes (git-b31dfaf) and systemd configuration...
 
