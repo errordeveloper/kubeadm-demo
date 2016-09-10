@@ -127,7 +127,7 @@ kubeadm join --token 8f1120.76bb5536ee4d0027 10.132.0.2
 
 ### Setup the nodes
 
-Now, list nodes with `gcloud compute instance-groups list-instances kube-node-group-1` and login to _each node_, and also make sure to become root using **`sudo su -`**.
+Now, list nodes with _`gcloud compute instance-groups list-instances kube-node-group-1`_ and login to _each node_, and also make sure to become root using **`sudo su -`**.
 
 <details>
 List GCE node group, login to one of them and become root:
