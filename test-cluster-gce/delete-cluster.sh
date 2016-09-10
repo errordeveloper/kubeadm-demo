@@ -14,18 +14,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+i="${1:-"1"}"
+
 dynamic_firewall_rules=($(gcloud compute firewall-rules list --regexp 'k8s-fw-.*' --uri))
 
-gcloud compute instances delete -q 'kube-master-0'
+gcloud compute instances delete -q "kube-master-${i}-0"
 
-gcloud compute instance-groups unmanaged delete -q 'kube-master-group'
+gcloud compute instance-groups unmanaged delete -q "kube-master-group-${i}"
 
-gcloud compute instance-groups managed delete -q 'kube-node-group'
+gcloud compute instance-groups managed delete -q "kube-node-group-${i}"
 
-gcloud compute instance-templates delete -q 'kube-node-template'
+gcloud compute instance-templates delete -q "kube-node-template-${i}"
 
-gcloud compute firewall-rules delete -q 'kube-extfw' 'kube-intfw' 'kube-nodefw' "${dynamic_firewall_rules[@]}"
+gcloud compute firewall-rules delete -q "kube-extfw-${i}" "kube-intfw-${i}" "kube-nodefw-${i}" "${dynamic_firewall_rules[@]}"
 
 ## TODO: handle cleanup of dynamically allocated resources (forwarding rules, static IPs etc)
 
-gcloud compute networks delete -q 'kube-net'
+gcloud compute networks delete -q "kube-net-${i}"

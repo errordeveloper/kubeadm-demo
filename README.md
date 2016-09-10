@@ -35,7 +35,7 @@ If you want, you can use a simple script provided in this repo to get get yourse
 
 ```console
 > git clone https://github.com/errordeveloper/kubeadm-demo
-> cd simple-gce-test-cluster
+> cd test-cluster-gce
 > ./create-cluster.sh
 ```
 
