@@ -219,7 +219,7 @@ If you don't have an app to install, try our microservices referece app
 
 To get an idea of how the app works, you can install Weave Scope probe and connect it to [Weave Cloud](https://cloud.weave.works) using the token you get when you signup
 ```console
-(master) # kubectl apply -f "https://cloud.weave.works/launch/k8s/weavescope.json?token=<WeaveCloudToken>"
+(master) # kubectl apply -f "https://cloud.weave.works/launch/k8s/weavescope.json?service-token=<WeaveCloudToken>"
 ```
 
 > TODO: External LoadBalancer and NodePort
