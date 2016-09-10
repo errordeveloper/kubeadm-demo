@@ -47,14 +47,14 @@ Next, login to master and nodes with `gcloud compute ssh kube-master-1-0` and be
 
 Before running the commands shown above, you might need to wait for a while for statrup script to finish installing Docker and pulling container image, you can use `journalctl | grep startup-script` to check if the startup script has finished.
 
-```console
+```
 > gcloud compute ssh kube-master-1-0
 Warning: Permanently added 'compute.1236589767647167447' (ECDSA) to the list of known hosts.
 [ilya@kube-master-1-0 ~]$ sudo su -
 ```
 
 Now run the commands shown above and this what you should see:
-```console
+```
 [root@kube-master-1-0 ~]# docker run -v /usr/local:/target gcr.io/kubeadm/installer:preview
 Installing binaries for Kubernetes (git-b31dfaf) and systemd configuration...
 
