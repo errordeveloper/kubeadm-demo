@@ -39,9 +39,11 @@ If you want, you can use a simple script provided in this repo to get get yourse
 > ./create-cluster.sh
 ```
 
-Next, login to master and nodes with `gcloud compute ssh`.
+Next, login to master and nodes with `gcloud compute ssh kube-master-1-0` and become root with `sudo su -`.
 
-> You might need to wait for a while for Docker packages to install (check `journalctl | grep startup-script`).
+Before running the commands shown above, you might need to wait for a while for statrup script to finish installing Docker and pulling container image, you can use `journalctl | grep startup-script` to check if the startup script has finished.
+
+Now, list nodes with `gcloud compute instance-groups list-instances kube-node-group-1` and login to each, also make sure to become root with `sudo su -`.
 
 ## Demo App
 
