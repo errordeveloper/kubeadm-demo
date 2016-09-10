@@ -61,7 +61,7 @@ gcloud compute instance-groups unmanaged add-instances "kube-master-group-${i}" 
 
 gcloud compute instance-templates create "kube-node-template-${i}" \
   "${common_instace_flags[@]}" \
-  --tags "kube-int,kube-ext,kube-node-${i}" \
+  --tags "kube-int-${i},kube-ext-${i},kube-node-${i}" \
   --scopes 'storage-ro,compute-rw,monitoring,logging-write'
 
 gcloud compute instance-groups managed create "kube-node-group-${i}" \
