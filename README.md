@@ -8,6 +8,8 @@ First you want to run this as root on each of the machines you have:
 (all-machines) # systemctl daemon-reload && systemctl enable kubelet && systemctl start kubelet
 ```
 
+> Please note, the installer image is provided for this preview demo to work, soon we should have traditional packages for popular Linux distributions.
+
 Next, on the master run
 ```console
 (master) # img="gcr.io/kubeadm/hyperkube:preview"
