@@ -1,6 +1,6 @@
 # Testing work-in-progress snapshot of `kubeadm` _(pre-alpha)_
 
-You will need a few machines (2 or more), and a recent version of Docker installed (idealy 1.11, but 1.12 is also known to work).
+You will need a few machines (2 or more), and a recent version of Docker installed (idealy v1.11.2 or v1.10.3, but v1.12.1 is also known to work).
 
 First you want to run this as root on each of the machines you have:
 ```console
