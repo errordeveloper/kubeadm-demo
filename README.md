@@ -217,7 +217,7 @@ Now do the same on other two nodes...
 
 If you don't have an app to install, try our microservices referece app
 ```console
-(master) # kubectl apply -f "https://github.com/lukemarsden/microservices-demo/blob/master/deploy/kubernetes/definitions/wholeWeaveDemo-NodePort.yaml?raw=true"
+(master) # kubectl apply -f "https://github.com/microservices-demo/microservices-demo/blob/master/deploy/kubernetes/definitions/wholeWeaveDemo.yaml?raw=true"
 (master) # kubectl describe svc front-end
 ```
 
