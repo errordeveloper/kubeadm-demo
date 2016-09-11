@@ -19,6 +19,8 @@ Next, on the master run
       kubeadm init
 ```
 
+If you are using a well supported cloud providers and configured IAM roles and instance profiles correctly, you can pass `--cloud-provider` flag.
+
 Once `kubeadm` has exited, install Weave Net addon with
 ```console
 (master) # kubectl apply -f "https://github.com/weaveworks/weave-kube/blob/master/weave-daemonset.yaml?raw=true"
@@ -46,6 +48,8 @@ If you want, you can use a simple script provided in this repo to get get yourse
 Next, login to master and nodes with _`gcloud compute ssh kube-master-1-0`_ and become root with **`sudo su -`**.
 
 Before running the commands shown above, you might need to wait for a while for statrup script to finish installing Docker and pulling container image, you can use _`journalctl | grep startup-script`_ to check if the startup script has finished.
+
+Don't forget to use ***`--cloud-provider=gce`***.
 
 <details>
 Login to master and become root:
@@ -102,7 +106,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/kubelet.service
 [root@kube-master-1-0 ~]# env \
 >   KUBE_HYPERKUBE_IMAGE="${img}" \
 >   KUBE_DISCOVERY_IMAGE="${img}" \
->       kubeadm init
+>       kubeadm init --cloud-provider=gce
 <master/tokens> generated token: "8f1120.76bb5536ee4d0027"
 <master/pki> created keys and certificates in "/etc/kubernetes/pki"
 <util/kubeconfig> created "/etc/kubernetes/kubelet.conf"
