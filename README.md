@@ -4,7 +4,7 @@ You will need a few machines (2 or more), and a recent version of Docker install
 
 First you want to run this as root on each of the machines you have:
 ```console
-(all-machines) # docker run -v /usr/local:/target gcr.io/kubeadm/installer:preview
+(all-machines) # docker run -v /usr/local:/target gcr.io/kubeadm/installer
 (all-machines) # systemctl daemon-reload && systemctl enable kubelet && systemctl start kubelet
 ```
 
@@ -12,11 +12,7 @@ First you want to run this as root on each of the machines you have:
 
 Next, on the master run
 ```console
-(master) # img="gcr.io/kubeadm/hyperkube:preview"
-(master) # env \
-  KUBE_HYPERKUBE_IMAGE="${img}" \
-  KUBE_DISCOVERY_IMAGE="${img}" \
-      kubeadm init
+(master) # kubeadm init
 ```
 
 If you are using a well supported cloud providers and configured IAM roles and instance profiles correctly, you can pass `--cloud-provider` flag.
